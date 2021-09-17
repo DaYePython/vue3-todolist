@@ -21,7 +21,7 @@ export default defineComponent({
   setup() {
     const { setTodo }: IUseTodo = useTodo()
     let todoValue = ref<string>('');
-    const setTodoValue = (e: KeyboardEvent): void => {
+    const setTodoValue = (): void => {
       if (todoValue.value.trim().length !== 0) {
         console.log(todoValue.value.trim().length);
         setTodo(todoValue.value)
