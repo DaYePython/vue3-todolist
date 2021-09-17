@@ -1,6 +1,8 @@
 <template>
-  <todo-input></todo-input>
-  <todo-list :list="todoList"></todo-list>
+  <div class="container">
+    <todo-input></todo-input>
+    <todo-list class="todolist" :list="todoList"></todo-list>
+  </div>
 </template>
 
 <script lang="ts">
@@ -33,7 +35,15 @@ export default defineComponent({
 </script>
 
 <style scoped>
-#app {
-  @apply container;
+.container {
+  @apply rounded-2xl overflow-hidden;
+  min-height: 50vh;
+  /* min-width: min-content; */
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.todolist {
+  flex: 1;
 }
 </style>

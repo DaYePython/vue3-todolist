@@ -1,0 +1,32 @@
+:root{
+    --primary-color: #4fc08d;
+    --primary-lighten-color: rgb(154,219,190);
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga", "kern";
+    background: linear-gradient(210deg, var(--primary-lighten-color), var(--primary-color));
+    
+    @apply w-screen h-screen overflow-hidden;
+}
+
+#app {
+    @apply flex items-center justify-center w-full h-full shadow-lg;
+  }
+
+button{
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+button:focus {
+  outline: none;
+}
+button:hover {
+  cursor: pointer;
+}
