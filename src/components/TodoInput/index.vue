@@ -1,15 +1,15 @@
 <template>
   <form class="form w-full flex" @submit.prevent="setTodoValue">
     <input
-      class="input form__input text-md"
+      class="input form__input text-md w-full"
       v-model="todoValue"
       @keyup.enter="setTodoValue"
       type="text"
+      placeholder="回车可快速添加"
     />
-    <button
-      type="submit"
-      class="btn hover:btn-hover focus:btn-hover form__btn text-sm cursor-pointer"
-    >添加</button>
+    <button type="submit" class="btn hover:btn-hover focus:btn-hover form__btn text-sm">
+      <span class="fas fa-plus"></span>
+    </button>
   </form>
 </template>
 <script lang="ts">
@@ -42,7 +42,7 @@ export default defineComponent({
   padding: 1.5rem 1rem 0 1rem;
 }
 .form .form__input {
-  flex: 1;
+  /* flex: 1; */
   font-size: 14px;
   border-radius: 2em;
   background: none;

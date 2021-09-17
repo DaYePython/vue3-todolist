@@ -1,17 +1,17 @@
 <template>
   <div class="todo" :class="{ 'finished': isFinish, 'willdo': isWillDo, 'doing': isDoing }">
     <button class="todo__content" @click="setDoing(item.id)">{{ item.content }}</button>
-    <div class="justify-self-end">
+    <div class="flex">
       <button
         class="todo__status btn hover:btn-hover focus:btn-hover"
         v-if="!isFinish"
         @click="setStatus(item.id)"
         :class="item.status === DOING ? 'doing' : 'willdo'"
       >
-        <span class="icon fas fa-2x" :class="[isDoing ? ' fa-spinner fa-pulse' : 'fa-check']"></span>
+        <span class="icon fas" :class="[isDoing ? ' fa-spinner fa-pulse' : 'fa-check']"></span>
       </button>
       <button class="btn hover:btn-hover focus:btn-hover todo__delete" @click="removeTodo(item.id)">
-        <span class="icon fas fa-times fa-2x"></span>
+        <span class="icon fas fa-times"></span>
       </button>
     </div>
   </div>
@@ -73,20 +73,24 @@ export default defineComponent({
   position: relative;
 }
 .todo__content::after {
-  position: absolute;
   content: "";
+  position: absolute;
   /* display: inline-block; */
   bottom: 0;
   left: 0;
   right: 0;
   height: 1px;
-  transition: 250ms ease-out;
-  transform-origin: center;
+
+  background-color: var(--primary-color);
+
   transform: scaleX(0);
+  transform-origin: center;
+  transition: 250ms ease-out;
+  will-change: transform;
 }
 
-.todo__content::after:focus,
-.todo__content::after:focus {
+.todo__content:focus::after,
+.todo__content:hover::after {
   transform: scaleX(1);
 }
 .finished {
@@ -101,10 +105,21 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 0.2em;
+  background: none;
+  padding: 0;
+  line-height: 1;
   width: 2em;
   height: 2em;
   border-radius: 50%;
   overflow: hidden;
   font-size: 80%;
+  will-change: transform;
+  transition: transform 0.5s ease-in-out;
+}
+
+.todo__delete:hover,
+.todo__delete:focus {
+  transform: rotate(180deg);
 }
 </style>

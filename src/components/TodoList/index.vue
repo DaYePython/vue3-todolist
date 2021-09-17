@@ -1,5 +1,5 @@
 <template>
-  <transition-group name="todolist" class="todolist" mode="out-in">
+  <transition-group tag="div" name="list" class="todolist">
     <todo-item
       v-for="item in list"
       :key="item.id"
@@ -36,16 +36,17 @@ export default defineComponent({
 .todolist {
   width: 100%;
   margin: 0 1rem;
-  padding: 0 1rem;
+  padding: 0 2rem 0 1rem;
 }
-.todolist-move,
-.todolist-leave-active,
-.todolist-enter-active {
+.list-move,
+.list-leave-active,
+.list-enter-active {
   transition: 500ms cubic-bezier(0.87, -0.41, 0.19, 1.44);
 }
-.todolist-enter,
-.todolist-leave-active {
+.list-enter,
+.list-leave-active {
   transform: translate(100%, 0);
   opacity: 0;
+  will-change: transform, opacity;
 }
 </style>

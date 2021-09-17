@@ -7,14 +7,14 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "liga", "kern";
+    font-family: "Source Sans Pro", sans-serif;
     background: linear-gradient(210deg, var(--primary-lighten-color), var(--primary-color));
     
-    @apply w-screen h-screen overflow-hidden;
 }
 
 #app {
-    @apply flex items-center justify-center w-full h-full shadow-lg;
-  }
+    @apply flex items-center justify-center w-screen h-screen shadow-lg overflow-hidden;
+}
 
 button{
   background: none;

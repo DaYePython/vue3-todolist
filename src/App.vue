@@ -38,12 +38,15 @@ export default defineComponent({
 .container {
   @apply rounded-2xl overflow-hidden;
   min-height: 50vh;
-  /* min-width: min-content; */
+  width: max-content;
   background: #fff;
   display: flex;
   flex-direction: column;
 }
 .todolist {
   flex: 1;
+}
+.todolist:last-child {
+  margin-bottom: 3em;
 }
 </style>
