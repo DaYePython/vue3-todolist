@@ -1,5 +1,5 @@
 <template>
-  <transition-group tag="div" name="list" class="todolist">
+  <transition-group tag="div" name="list" mode="out-in" class="todolist">
     <todo-item
       v-for="item in list"
       :key="item.id"
