@@ -34,9 +34,9 @@ export default defineComponent({
 </script>
 <style scoped>
 .todolist {
-  width: 100%;
+  /* width: 100%; */
   margin: 0 1rem;
-  padding: 0 2rem 0 1rem;
+  padding: 0 1rem;
 }
 .list-move,
 .list-leave-active,
